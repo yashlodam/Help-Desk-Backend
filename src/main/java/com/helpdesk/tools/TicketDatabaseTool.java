@@ -39,4 +39,11 @@ public class TicketDatabaseTool {
 	}
 	
 	
+	//get current system time
+	@Tool(description = "this tool helps to get current system time.")
+	public String getCurrentTime() {
+		return String.valueOf(System.currentTimeMillis());
+	}
+	
+	
 }

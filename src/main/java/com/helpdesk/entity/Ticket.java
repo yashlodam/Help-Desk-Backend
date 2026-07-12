@@ -18,7 +18,10 @@ public class Ticket {
     @Enumerated(EnumType.STRING)
     private Priority priority;
     
+    private String category;
     
+    @Column(length = 1000)
+    private String description;
 
     @Column(unique = true)
     private String username;
@@ -29,7 +32,27 @@ public class Ticket {
 
     private LocalDateTime updatedOn;
     
-    @PrePersist
+    public String getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+
+	public String getDescription() {
+		return description;
+	}
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+	@PrePersist
     void preSave() {
     	if(this.createdOn == null) {
     		this.createdOn = LocalDateTime.now();
