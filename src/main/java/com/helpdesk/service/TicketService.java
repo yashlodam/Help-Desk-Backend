@@ -20,6 +20,12 @@ public class TicketService {
 		return repository.save(ticket);
 	}
 	
+	//update ticket
+	
+	public Ticket updateTicket(Ticket ticket) {
+		
+		return repository.save(ticket);
+	}
 	
 	//get ticket logic
 	
